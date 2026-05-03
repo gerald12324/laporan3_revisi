@@ -1,0 +1,70 @@
+/* ===== SHARED STYLES - SDN Margajaya 4 ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap');
+
+:root {
+  --navy: #0f2a44;
+  --navy-light: #1b3e66;
+  --blue: #1565c0;
+  --sky: #4fc3f7;
+  --gold: #f9a825;
+  --white: #ffffff;
+  --bg: #f0f4f8;
+  --text: #2d3748;
+  --shadow: 0 20px 60px rgba(15,42,68,0.15);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* NAVBAR */
+header { background: var(--navy); position:sticky; top:0; z-index:100; box-shadow:0 4px 20px rgba(0,0,0,0.3); }
+.navbar { display:flex; justify-content:space-between; align-items:center; padding:12px 40px; max-width:1400px; margin:auto; }
+.logo { font-size:20px; font-weight:700; color:white; display:flex; align-items:center; gap:10px; text-decoration:none; }
+.logo-icon { width:40px; height:40px; background:var(--gold); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:20px; }
+.navbar ul { display:flex; list-style:none; gap:5px; }
+.navbar ul li a { color:rgba(255,255,255,0.85); text-decoration:none; font-size:13px; padding:7px 12px; border-radius:6px; transition:all 0.3s; font-weight:500; }
+.navbar ul li a:hover, .navbar ul li a.active { background:rgba(79,195,247,0.2); color:var(--sky); }
+.menu-toggle { display:none; font-size:24px; cursor:pointer; color:white; }
+
+/* HERO */
+.hero { background:linear-gradient(135deg,rgba(15,42,68,0.85) 0%,rgba(21,101,192,0.7) 100%), url("profil_utama.jpg") center/cover no-repeat; min-height:400px; display:flex; align-items:center; padding:0 80px; }
+.hero-text { max-width:600px; }
+.hero h1 { font-family:'Playfair Display',serif; font-size:46px; color:white; margin-bottom:12px; }
+.hero p { color:rgba(255,255,255,0.85); font-size:16px; }
+
+/* SECTION */
+.section { padding:80px 40px; max-width:1200px; margin:auto; }
+.section-header { text-align:center; margin-bottom:50px; }
+.section-header h2 { font-family:'Playfair Display',serif; font-size:36px; color:var(--navy); }
+.divider { width:60px; height:4px; background:var(--sky); margin:12px auto; border-radius:2px; }
+
+/* FOOTER */
+.footer-main { background:var(--navy); color:white; padding:50px 40px 20px; }
+.footer-bottom { text-align:center; padding:15px 40px; background:#0a1f33; color:rgba(255,255,255,0.4); font-size:13px; }
+
+/* ANIMATIONS */
+.reveal { opacity:0; transform:translateY(40px); transition:all 0.8s cubic-bezier(0.25,0.46,0.45,0.94); }
+.reveal.left { transform:translateX(-40px); }
+.reveal.right { transform:translateX(40px); }
+.reveal.visible { opacity:1; transform:translate(0); }
+
+/* BTN */
+.btn-primary { padding:12px 28px; background:var(--sky); color:var(--navy); border-radius:50px; text-decoration:none; font-weight:700; transition:all 0.3s; display:inline-block; }
+.btn-primary:hover { transform:translateY(-3px); box-shadow:0 10px 30px rgba(79,195,247,0.4); }
+
+/* RESPONSIVE */
+@media(max-width:768px) {
+  .navbar { padding:12px 20px; }
+  .navbar ul { display:none; flex-direction:column; position:absolute; top:100%; left:0; right:0; background:var(--navy); padding:15px 20px; }
+  .navbar ul.show { display:flex; }
+  .menu-toggle { display:block; }
+  .hero { padding:0 25px; min-height:280px; }
+  .hero h1 { font-size:28px; }
+  .section { padding:50px 20px; }
+}
